@@ -1,4 +1,4 @@
 # ex7
 
 
-http://ex7.jobability.co.kr
+http://div.jobability.co.kr
