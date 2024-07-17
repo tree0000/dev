@@ -1,4 +1,4 @@
-# no1
+# ex7
 
 
-http://no1.jobability.co.kr/
+http://ex7.jobability.co.kr
