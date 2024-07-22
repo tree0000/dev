@@ -192,19 +192,48 @@
 //     }, 500);
 // })
 
-$(document).ready(function () {
+// $(document).ready(function () {
   
+//     $('#box').css({
+//         width: 100
+//         ,height: 100
+//         ,background: 'red'
+//         ,position: 'absolute'
+//         ,left: 10
+//         ,top: 10
+//     }).animate({
+//         height: '+=200'
+//         ,width: '-=30'
+//         ,left: '+300'
+//         ,opacity: 0.5
+//     }, 500);
+// });
+
+$(document).ready( () => {
+    let clearQueue =false;
+    let goToEnd =false;
+
+    $('#clearQueue').change(function () {
+        clearQueue = $(this).prop('checked')
+    });
+    $('#goToEnd').change(function () {
+        goToEnd = $(this).prop('checked');
+    });
+    $('#stopButton').click(function () {
+        $('#box').stop(clearQueue, goToEnd);
+    });
+    
     $('#box').css({
+        width: 100,
+        height: 100,
+        background: 'red'
+    });
+    setInterval(function () {
+        $('#box').animate({
         width: 100
-        ,height: 100
-        ,background: 'red'
-        ,position: 'absolute'
-        ,left: 10
-        ,top: 10
-    }).animate({
-        height: '+=200'
-        ,width: '-=30'
-        ,left: '+300'
-        ,opacity: 0.5
-    }, 500);
+        }, 1000).delay(1000).animate({
+        width: 200,
+        height: 100
+        }, 1000);
+    }, 3000);
 });
