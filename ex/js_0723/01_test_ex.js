@@ -293,7 +293,7 @@
 //     let pi =3.141592
 //     console.log(`파이값:${pi}`);
 // }
-console.log(`파이값:${pi}`);
+// console.log(`파이값:${pi}`);
 
 //함수블록을 사용한 스코프
 // function sample(){
@@ -302,3 +302,5 @@ console.log(`파이값:${pi}`);
 // }
 // sample()
 // console.log(`파이값:${pi}`);
+
+
