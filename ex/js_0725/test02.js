@@ -1,5 +1,5 @@
-
-
+//지우기
+/*
 document.addEventListener('DOMContentLoaded',() =>{
 const p =document.querySelector('p')
 const input =document.querySelector('input')
@@ -20,3 +20,39 @@ button.addEventListener('click',(event)=>{
   input.value =''
 })
 });
+*/
+
+//예외처리
+/*
+test =() =>{
+  try{
+    document.write('A위치')
+    throw"예외"
+  }catch(exception){
+    document.write('B위치')
+    return
+  }
+  document.write('C위치')
+}
+test()
+*/
+/*
+test =() =>{
+  try{
+    document.write('A위치')
+    throw"예외"
+  }catch(exception){
+    document.write('B위치')
+    return
+  }finally{
+    document.write('C위치')
+  }
+}
+test()
+
+test = (object) =>{
+  document.write(object.a + object.b)
+}
+*/
+
+
