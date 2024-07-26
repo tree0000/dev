@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./01_test.js"></script>
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // // 컴포넌트와 컨테이너 생성하기
+        // const component = <h1>리액트 기본</h1>
+        // const container = document.getElementById('root')
+  
+        // // 출력하기
+        // ReactDOM.render(component, container)
+        const name = '구름'
+      const imgUrl = 'http://placedog.net/400/200'
+
+      // 컴포넌트와 컨테이너 생성하기
+      const component = <div>
+        <h1>{name} 님 안녕하세요!</h1>
+        <img src={imgUrl} />
+      </div>
+      const container = document.getElementById('root')
+
+      // 출력하기
+      ReactDOM.render(component, container)
+      </script>
+</body>
+</html>
