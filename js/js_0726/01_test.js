@@ -236,3 +236,10 @@ class Pet{
       const pet = new Pet('구름', 6)
       console.log(pet + '')
       */
+class Pet {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  toString() {}
+}
