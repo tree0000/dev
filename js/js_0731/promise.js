@@ -470,125 +470,124 @@ const { log } = require("yeoman-environment/lib/util/util");
 //   console.log(asyncFunc.next());
 // });
 
-async function* asyncSequence(
-  from = 0,
-  to = Infinity,
-  interval = 1,
-  timeout = 1000
-) {
-  let next = from;
-  while (next <= to) {
-    yield new Promise((resolve, rejects) => {
-      setTimeout(() => resolve(next), timeout);
-    });
-    next += interval;
-  }
-}
-(async () => {
-  let seq = asyncSequence(2, 10, 2);
-  for await (let value of seq) console.log(value);
-})();
+// async function* asyncSequence(
+//   from = 0,
+//   to = Infinity,
+//   interval = 1,
+//   timeout = 1000
+// ) {
+//   let next = from;
+//   while (next <= to) {
+//     yield new Promise((resolve, rejects) => {
+//       setTimeout(() => resolve(next), timeout);
+//     });
+//     next += interval;
+//   }
+// }
+// (async () => {
+//   let seq = asyncSequence(2, 10, 2);
+//   for await (let value of seq) console.log(value);
+// })();
 
-//문제
-//제네레이터를 사용하여 여러 비동기 작업을 순차적으로 실행하는 함수를 작성하고
-//각 작업은 2초후에 완료 된다고 가정하고, 작업이 완료 돨때 마다 결과출력
-//제네레이터는 작업이 완료될 때마다 다음작업을 실행
+// //문제
+// //제네레이터를 사용하여 여러 비동기 작업을 순차적으로 실행하는 함수를 작성하고
+// //각 작업은 2초후에 완료 된다고 가정하고, 작업이 완료 돨때 마다 결과출력
+// //제네레이터는 작업이 완료될 때마다 다음작업을 실행
 
-function* Generator() {
-  yield "작업 1";
-  yield "작업 2";
-  yield "작업 3";
-}
-async function work(name) {
-  console.log(`${name} 시작`);
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  console.log(`${name} 완료`);
-  return `${name} 결과`;
-}
-Print = async () => {
-  const generator = Generator();
-  for (let task of generator) {
-    const result = await work(task);
-    console.log(`결과: ${result}`);
-  }
-};
-Print();
+// function* Generator() {
+//   yield "작업 1";
+//   yield "작업 2";
+//   yield "작업 3";
+// }
+// async function work(name) {
+//   console.log(`${name} 시작`);
+//   await new Promise((resolve) => setTimeout(resolve, 2000));
+//   console.log(`${name} 완료`);
+//   return `${name} 결과`;
+// }
+// Print = async () => {
+//   const generator = Generator();
+//   for (let task of generator) {
+//     const result = await work(task);
+//     console.log(`결과: ${result}`);
+//   }
+// };
+// Print();
 
-//(풀이)
-function* taskGenerator() {
-  yield new Promise((resolve) => setTimeout(() => resolve("1 완료"), 2000));
-  yield new Promise((resolve) => setTimeout(() => resolve("2 완료"), 2000));
-  yield new Promise((resolve) => setTimeout(() => resolve("3 완료"), 2000));
-}
-const tasksDisplay = async () => {
-  const tasks = taskGenerator();
-  for (let task of tasks) {
-    const result = await task;
-    console.log(result);
-  }
-};
-tasksDisplay();
-//문제
-//사용자 정보를 가져오는 비동기 함수를 작성하고 async/await를 사용하여 호출해라
-const users = {
-  1: { name: "Kim", age: 25 },
-  2: { name: "Lee", age: 25 },
-  3: { name: "Jung", age: 25 },
-};
-getUser = async (userI) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const user = users[userI];
-      if (user) {
-        resolve(user);
-      } else {
-        reject(new Error("error"));
-      }
-    }, 2000);
-  });
-};
+// //(풀이)
+// function* taskGenerator() {
+//   yield new Promise((resolve) => setTimeout(() => resolve("1 완료"), 2000));
+//   yield new Promise((resolve) => setTimeout(() => resolve("2 완료"), 2000));
+//   yield new Promise((resolve) => setTimeout(() => resolve("3 완료"), 2000));
+// }
+// const tasksDisplay = async () => {
+//   const tasks = taskGenerator();
+//   for (let task of tasks) {
+//     const result = await task;
+//     console.log(result);
+//   }
+// };
+// tasksDisplay();
+// //문제
+// //사용자 정보를 가져오는 비동기 함수를 작성하고 async/await를 사용하여 호출해라
+// const users = {
+//   1: { name: "Kim", age: 25 },
+//   2: { name: "Lee", age: 25 },
+//   3: { name: "Jung", age: 25 },
+// };
+// getUser = async (userI) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const user = users[userI];
+//       if (user) {
+//         resolve(user);
+//       } else {
+//         reject(new Error("error"));
+//       }
+//     }, 2000);
+//   });
+// };
 
-const display = async (userI) => {
-  try {
-    const user = await getUser(userI);
-    console.log(`User ${userI}:`, user);
-  } catch (e) {}
-};
-display(1);
-display(2);
-display(3);
-display(4);
+// const display = async (userI) => {
+//   try {
+//     const user = await getUser(userI);
+//     console.log(`User ${userI}:`, user);
+//   } catch (e) {}
+// };
+// display(1);
+// display(2);
+// display(3);
+// display(4);
 
-//풀이
-const UserData = (userId) => {
-    return new Promise((resolve, reject) => { 
-      setTimeout(() => {
-        const users = {
-          1: { name: "A", age: 25 },
-          2: { name: "B", age: 30 },
-          3: { name: "C", age: 28 },
-        };
-        const user = users[userId];
-        if (user) {
-          resolve(user);
-        } else {
-          reject("못찾음");
-        }
-      }, 1000);
-    });
-  };
-  
-  const getUser = async (userId) => {
-    try {
-      const userDataGet = await UserData(userId);
-      console.log(`${userDataGet.name}, ${userDataGet.age}`);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  
-  getUser(1); // A, 25
-  getUser(2); // B, 30
-  getUser(3); // C, 28
-  getUser(4); // 못찾음
-  
+// //풀이
+// const UserData = (userId) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const users = {
+//         1: { name: "A", age: 25 },
+//         2: { name: "B", age: 30 },
+//         3: { name: "C", age: 28 },
+//       };
+//       const user = users[userId];
+//       if (user) {
+//         resolve(user);
+//       } else {
+//         reject("못찾음");
+//       }
+//     }, 1000);
+//   });
+// };
+
+// const getUser = async (userId) => {
+//   try {
+//     const userDataGet = await UserData(userId);
+//     console.log(`${userDataGet.name}, ${userDataGet.age}`);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// getUser(1); // A, 25
+// getUser(2); // B, 30
+// getUser(3); // C, 28
+// getUser(4); // 못찾음
