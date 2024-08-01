@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 가입</title>
+    <link rel="stylesheet" href="./log.css">
+    <script src="./log.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>회원 가입</h1>
+        <form name="name" id="id">
+            <div class="form-group">
+                <label for="userid">아이디</label>
+                <input type="text" id="userid" name="username" placeholder="4~15자리의 영문과 숫자로 입력">
+            </div>
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" placeholder="올바른 이메일을 적어주세요">
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="8자리 이상">
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">비밀번호 확인</label>
+                <input type="check_password" id="check-password" name="check-password"placeholder="비밀번호 확인">
+            </div>
+            <div class="form-chekd">
+                <label>메일 수신</label>
+                <input type="radio" id="email" name="email" value="yes">
+                <label for="email">예</label>
+                <input type="radio" id="email" name="email" value="no">
+                <label for="email">아니오</label>
+            </div>
+            <div class="form-buttons">
+                <button type="submit">가입하기</button>
+                <button type="reset">취소</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
