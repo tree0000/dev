@@ -1,0 +1,41 @@
+.wrapper {
+    width: 550px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#container {
+    position: relative;
+}
+
+#container > img {
+    width: 100%;
+    display: none;
+}
+
+#container > img.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    height: 100%;
+    background-color: black;
+    color: white;
+    top: 0;
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+button:hover {
+    opacity: 1;
+}

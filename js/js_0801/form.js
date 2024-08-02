@@ -68,8 +68,7 @@ function changeUpper() {
   keyInput.value = keyInput.value.toUpperCase();
 }
 //셀렉트
-const selectFruits = document.getElementById("selectFru");
-selectFruits.addEventListener("change", (e) => {
-  document.getElementById("show").innerHTML =
-    "내가 좋아하는 과일" + e.target.value + "입니다";
-});
+const selectFruits = document.getElementById("selectFru")
+selectFruits.addEventListener('change',(e)=>{
+  document.getElementById("show").innerHTML ="내가 좋아하는 과일"+ e.target.value + "입니다"
+})
