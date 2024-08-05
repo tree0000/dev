@@ -1,0 +1,16 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel serve index.html --out-dir dist",
+    "dev": "parcel serve index.html --out-dir dist",
+    "build": "parcel build index.html --out-dir dist"
+  },
+  "dependencies": {
+    "axios": "^1.7.3",
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["modules.js"],"names":["_default","a","b"],"mappings":";;;;;;AAAe,SAAAA,SAAUC,CAAC,EAAEC,CAAC,EAAE;EAC7B,OAAOD,CAAC,GAAGC,CAAC;AACd","file":"modules.3d28518f.js","sourceRoot":"..","sourcesContent":["export default function (a, b) {\n  return a + b;\n}\n"]}
