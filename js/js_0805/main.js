@@ -134,65 +134,86 @@
 // console.log(_.filter(mySister), { age: 22, name: "kim" });
 // console.log(_.filter(mySister, (sister) => sister.age === 22));
 
-// function getMovies() {
-//   axios
-//     .get(
-//       " "
-//     )
-//     .then((response) => {
-//       console.log(response);
-//       const h1El = document.querySelector("h1");
-//       const imgEl = document.querySelector("img");
-//       const h4El = document.querySelector("h4");
-//       const h5El = document.querySelector("h5");
-//       const h3El = document.querySelector("h3");
-//       h1El.textContent = response.data.Search[0].Title;
-//       imgEl.src = response.data.Search[0].Poster;
-//       h4El.textContent = response.data.Search[0].Type;
-//       h5El.textContent = response.data.Search[0].Year;
-//       h3El.textContent = response.data.Search[0].Plot;
-//     });
-// }
-// getMovies();
+function getMovies(title) {
+  axios
+    .get(`https://www.omdbapi.com/?i=tt3896198&apikey=7035c60c&s=${title}`)
+    .then((response) => {
+      console.log(response);
+      const results = document.getElementById("results");
+      results.innerHTML = "";
+      if (response.data.Search && response.data.Search.length > 0) {
+        const movies = response.data.Search.slice(0, 10);
+        movies.forEach((movie) => {
+          const movieEl = document.createElement("div");
+          const h1El = document.createElement("h1");
+          const imgEl = document.createElement("img");
+          const YearEl = document.createElement("p");
+          const typeEl = document.createElement("p");
+
+          h1El.textContent = movie.Title;
+          imgEl.src = movie.Poster;
+          YearEl.textContent = movie.Year;
+          typeEl.textContent = movie.Type;
+
+          movieEl.appendChild(h1El);
+          movieEl.appendChild(imgEl);
+          movieEl.appendChild(YearEl);
+          movieEl.appendChild(typeEl);
+          results.appendChild(movieEl);
+        });
+      } else {
+        results.textContent = "영화를 찾을 수 없습니다.";
+      }
+    });
+}
+getMovies();
+document.getElementById("searchButton").addEventListener("click", () => {
+  const search = document.getElementById("searchInput").value;
+  if (searchInput.trim() !== "") {
+    getMovies(searchInput);
+  } else {
+    results.textContent = "영화 제목 입력";
+  }
+});
 
 //자전거 지도 만들기
 
-const API_KEY = "";
-async function getData() {
-  const url = $`{API_KEY}`;
-  const response = await fetch(url);
-  const data = await response.json();
-  const locations = data.rentBikeStatus.row.map((spot) => [
-    spot.stationName,
-    spot.stationLatitude,
-    spot.stationLongitude,
-    spot.parkingBikeTotCnt,
-  ]);
-  console.log(data);
-  console.log("locations", locations);
-  drawMap(locations);
-}
+// const API_KEY = "";
+// async function getData() {
+//   const url = $`{API_KEY}`;
+//   const response = await fetch(url);
+//   const data = await response.json();
+//   const locations = data.rentBikeStatus.row.map((spot) => [
+//     spot.stationName,
+//     spot.stationLatitude,
+//     spot.stationLongitude,
+//     spot.parkingBikeTotCnt,
+//   ]);
+//   console.log(data);
+//   console.log("locations", locations);
+//   drawMap(locations);
+// }
 
-function drawMap(locations) {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
-    center: new google.maps.LatLng(locations[0][1], locations[0][2]),
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-  });
-  const infowindow = new google.maps.InfoWindow();
-  locations.forEach((location, i) => {
-    const markerElement = new google.maps.marker.AdvancedMarkerElement({
-      position: new google.maps.LatLng(location[1], location[2]),
-      map: map,
-      title: location[0],
-    });
-    markerElement.addListener("click", () => {
-      infowindow.setContent(
-        `<div><strong>${location[0]}</strong><br/>Bikes available: ${location[3]}</div>`
-      );
-      infowindow.open(map, markerElement);
-    });
-  });
-}
+// function drawMap(locations) {
+//   const map = new google.maps.Map(document.getElementById("map"), {
+//     zoom: 13,
+//     center: new google.maps.LatLng(locations[0][1], locations[0][2]),
+//     mapTypeId: google.maps.MapTypeId.ROADMAP,
+//   });
+//   const infowindow = new google.maps.InfoWindow();
+//   locations.forEach((location, i) => {
+//     const markerElement = new google.maps.marker.AdvancedMarkerElement({
+//       position: new google.maps.LatLng(location[1], location[2]),
+//       map: map,
+//       title: location[0],
+//     });
+//     markerElement.addListener("click", () => {
+//       infowindow.setContent(
+//         `<div><strong>${location[0]}</strong><br/>Bikes available: ${location[3]}</div>`
+//       );
+//       infowindow.open(map, markerElement);
+//     });
+//   });
+// }
 
-window.onload = getData;
+// window.onload = getData;
