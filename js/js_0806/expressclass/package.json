@@ -1,11 +1,12 @@
 {
   "name": "js_0806",
   "version": "1.0.0",
-  "description": "",
-  "main": "expressclass.js",
+  "description": "Project description",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon expressclass.js"
+    "dev": "nodemon expressclass.js",
+    "expressclass": "node expressclass.js"
   },
   "author": "",
   "license": "ISC",

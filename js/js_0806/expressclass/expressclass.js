@@ -11,8 +11,9 @@ const users = [
   { name: "park", email: " park@gmail.com" },
 ];
 
+app.use(express.static(__dirname + "/public"));
 app.get("/", (req, res) => {
-  res.sendFile(path.join__dirname + "/index.html");
+  res.sendFile(path.join(__dirname + "public", "index.html"));
 });
 
 // app.get("/post", (req, res) => {
