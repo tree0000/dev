@@ -16,7 +16,7 @@ export const create = async (req, res) => {
 
 export const read = async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find({ email });
     if (users.length === 0) {
       return res.status(404).json({ message: "Not Found" });
     }

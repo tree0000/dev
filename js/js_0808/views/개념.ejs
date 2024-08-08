@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <p><%= message %></p>
+    <p><%= "Hello" + "park"%></p>
+    <p><%= 10 + 2  %></p>
+    <p><%= 10 - 2  %></p>
+    <p><%= true? "참" : "거짓"  %></p>
+    <p><%= false? "참" : "거짓"  %></p>
+    <p><%- "<h3>Hi</h3>"  %></p>
+    <p><%= "<h3>Hi</h3>"  %></p>
+    <p><% let str ="Hello" %></p>
+    <p><%= str %></p>
+  
+     if문
+    <% if(true) {%>
+        <h3>맞나요?</h3>
+        <% } %>
+    <% if(false) {%>
+        <h3>맞나요(아니네)?</h3>
+        <% } %>
+  
+   
+    <% if(true) {%>
+        <h3>참?</h3>
+        <% }else{ %>
+            <div>거짓</div>
+            <% } %>
+           
+             <% for(let i =1; i<=3; i++) { %>
+                <div><a href="/order/<%=i%>">test<%=i %>로</a></div>
+                <% } %>
+          
+             <% let arr = ["apple","banana","cherry"] %>
+             <% arr.forEach((fruit) =>{ %>
+                <h3><%=fruit %>이다.</h3>
+                <%}) %>
+            
+                
+</body>
+</html>

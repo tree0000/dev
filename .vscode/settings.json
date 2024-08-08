@@ -6,5 +6,6 @@
     "jobability",
     "selectedindex",
     "selectedrise"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
