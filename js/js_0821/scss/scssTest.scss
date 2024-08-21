@@ -1,0 +1,73 @@
+$header-color:#DEB887;
+$nav-color:	#BDB76B;
+$background-color: #ccc;
+$text-color: white;
+$border-color: #ccc;
+
+@mixin card-style($padding: 15px, $margin-bottom:20px, $border-radius:5px){
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin-bottom: $margin-bottom;
+    padding: $padding;
+}
+@mixin flex-container($direction:row, $justify: center, $align-items:center){
+display: flex;
+flex-direction: $direction;
+justify-content: $justify;
+align-items: $align-items;
+}
+
+
+body {
+  background-color: $background-color;
+  margin: 0;
+  padding: 20px;
+}
+
+.header {
+  background-color: $header-color;
+  color: $text-color;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+.nav {
+ @include flex-container(row,flex-start,center);
+  background-color: $nav-color;
+  padding: 16px;
+  .nav-item {
+    color: $text-color;
+    margin: 0 15px;
+  }
+}
+
+.content {
+  background-color: $text-color;
+  padding: 20px;
+
+  .card {
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+
+    &-title {
+        font-size: 20px;
+        color: $nav-color;
+        margin-bottom: 10px;
+      }
+  
+    &-description {
+        font-size: 14px;
+        color: $nav-color;
+      }
+  }
+}
+.footer {
+  background-color: $nav-color;
+  color: $text-color;
+  padding: 10px;
+  text-align: center;
+}
