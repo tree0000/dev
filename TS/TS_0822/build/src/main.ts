@@ -455,3 +455,14 @@ const maxNumber = TMax(10, 20);
 // T가 유니온 타입일 경우 string 타입만 요소 추출
 type StringS<T> = T extends string ? T : never;
 type Test1 = StringS<string| boolean | number>
+
+
+
+
+
+
+
+
+
+
+
