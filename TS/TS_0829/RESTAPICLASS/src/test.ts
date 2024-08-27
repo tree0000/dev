@@ -65,4 +65,5 @@ myReduce<U>(callback: (accumulator: U, currentValue: T, currentIndex: number, ar
 myReduce<U>(callback: (accumulator: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
 }
 //
+//
 
