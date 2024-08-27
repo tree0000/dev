@@ -64,5 +64,4 @@ interface Array<T> {
 myReduce<U>(callback: (accumulator: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
 myReduce<U>(callback: (accumulator: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;
 }
-//dddd
-288b483
+
