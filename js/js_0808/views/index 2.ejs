@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../public/main.css"> 
+    <title>Document</title>
+</head>
+<body>
+  <div>
+    <ul>
+      <% for(let person of people) { %>
+        <li><%= person.name %></li>
+      <% } %>
+    </ul>
+  </div>
+
+  <!-- 한명 뽑기 -->
+  <div>
+    <ul>
+      <% if (people.length > 0) { %>
+        <li><%= people[0].name %></li>
+      <% } %>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h1>List</h1>
+    <form action="/addTask" method="post">
+      <input type="text" name="newTask" placeholder="할일 목록 추가">
+      <button type="submit">추가</button>
+    </form>
+    <ul>
+      <% for(let task of tasks) { %>
+        <li>
+          <%= task %>
+          <form action="/deleteTask" method="post">
+            <input type="hidden" name="task" value="<%= task %>">
+            <button type="submit">지우기</button>
+          </form>
+        </li>
+      <% } %>
+    </ul>
+    <ul>
+      <% for(let user of user2) { %>
+        <li class="<%= user.role %>">
+          name: <%= user.name %> / age: <%= user.age %>
+          <%= user.age >= 18 ? 'pass' : 'reject' %>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+
+</body> 
+</html>

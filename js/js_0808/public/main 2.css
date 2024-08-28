@@ -1,0 +1,19 @@
+
+.body{
+    background-color: gray;
+}
+.front {
+    color: blue;
+}
+.back {
+    color: green;
+}
+.full {
+    color: red;
+}
+.pass {
+    font-weight: bold;
+}
+.reject {
+    text-decoration: line-through;
+}

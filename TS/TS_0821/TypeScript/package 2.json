@@ -1,0 +1,11 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "js/js_0821/TypeScript/build/js/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
