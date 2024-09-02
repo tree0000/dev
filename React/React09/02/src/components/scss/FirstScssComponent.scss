@@ -1,0 +1,24 @@
+// 변수
+$main-font: "Helvetica";
+
+// 함수 선언 (Mixin)
+@mixin title($font) {
+  font-size: 60px;
+  font-family: $font;
+  color: red;
+}
+
+// 함수 사용 (Mixin 사용)
+.header {
+  @include title($main-font);
+}
+$width: 500px;
+$height: 500px;
+
+.container {
+  border: 1px solid black;
+  width: $width;
+  height: $height;
+  background: url("../images/logo192.png");
+  background-size: cover;
+}
