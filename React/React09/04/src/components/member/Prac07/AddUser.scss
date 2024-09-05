@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: 1rem auto;
+  margin-bottom: 2rem;
+  background-color: seashell;
+
+  input {
+    width: 250px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
+
+  .addBtn {
+    width: 200px;
+    padding: 1rem;
+    background-color: pink;
+    border: none;
+    border-radius: 15px;
+  }
+}

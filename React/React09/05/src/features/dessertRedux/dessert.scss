@@ -1,0 +1,23 @@
+.dessert-container {
+  margin: 100px auto;
+  text-align: center;
+
+  ul {
+      list-style:none;
+      width: 300px;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0;
+
+  }
+
+  button {
+      width: 80px;
+      height: 50px;
+      margin: 10px;
+      font-size: large;
+      background-color: #F2D5DB;
+      border: 1px solid black;
+      border-radius: 10px;
+  }
+}
