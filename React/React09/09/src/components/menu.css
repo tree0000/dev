@@ -1,0 +1,65 @@
+/* 전체 화면의 기본 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: white;
+  }
+  
+  /* 네비게이션 바 스타일 */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db;
+    padding: 20px;
+    color: white;
+  }
+  
+  .navbar .logo {
+    font-size: 2em;
+    font-family: 'Pacifico', cursive; /* 폰트를 사용할 수 있다면 이와 비슷한 느낌 */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 기능 설명 섹션 */
+  .features {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .features h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }

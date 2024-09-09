@@ -1,20 +1,30 @@
 import { useNavigate } from "react-router-dom";
-import products from '../productData'; // 제품 데이터 파일 임포트
-import '../../App.css'; // CSS 파일 임포트
+import products from '../productData'; 
+import '../../App.css'; 
+import React from "react";
+
+// 제품의 타입
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+}
 
 const Product = () => {
   const navigate = useNavigate();
 
-  const clickHandler = (productId) => {
-    navigate(`/product/${productId}`); // 클릭 시 해당 제품 상세 페이지로 이동
+  // 제품 상세 페이지 헨들러
+  const clickHandler = (productId: number) => {
+    navigate(`/product/${productId}`); //이동 navigate
   };
 
   return (
     <div className="product-container">
-      {products.map((product) => (
+      {products.map((product: Product) => (
         <div 
           key={product.id} 
-          className="product-box" // 스타일 적용
+          className="product-box"
           onClick={() => clickHandler(product.id)}
         >
           <img src={product.image} alt={product.title} className="product-image" />

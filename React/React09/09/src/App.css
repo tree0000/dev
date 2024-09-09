@@ -93,3 +93,116 @@ button {
   margin-top: 30px;
   color: black;
 }
+
+/* 배너 */
+.home-banner {
+  width: 100%;
+  height: 650px; /* 원하는 높이로 설정 */
+  overflow: hidden; /* 넘치는 부분을 숨김 */
+}
+
+.home-img {
+  width: 100%;
+  height: 85%;
+  object-fit: calc(); /* 이미지 비율을 유지하면서 컨테이너를 꽉 채움 */
+}
+
+/* 룩북 css */
+
+/* 탭 컨테이너를 화면 중간으로 배치 */
+.tab-pills {
+  display: flex;
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+  height: 10vh; /* 화면 전체 높이 사용 */
+}
+
+.tab-pills ul {
+  display: flex;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.tab-pills li {
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-pills li[aria-selected="true"] {
+  background-color: black;
+  color: white;
+}
+
+.tab-pills li[aria-selected="false"] {
+  background-color: white;
+  color: black;
+}
+
+/* 룩복 */
+
+/* 기본 레이아웃 설정 */
+.lookbook-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.lookbook-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  font-weight: normal;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+/* 슬라이더 스타일 */
+.home-banner {
+  width: 100%;
+  height: 600px;
+}
+
+.lookbook-slide {
+  position: relative;
+}
+
+.lookbook-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.lookbook-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
